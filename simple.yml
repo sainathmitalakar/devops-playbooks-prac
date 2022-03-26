@@ -1,0 +1,9 @@
+---
+ - name: install httpd service
+   hosts: node-test
+   become: yes
+   tasks: 
+     - name: install httpd pkg
+       yum:
+         name: httpd
+         state: latest

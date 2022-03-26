@@ -1,0 +1,11 @@
+---
+ - name: create softlink
+   hosts: node-test
+   tasks: 
+      - name : create softlink
+        file: 
+          src: /etc/fstab
+          dest: /root/softlink
+          state: link
+          owner: centos
+          group: centos

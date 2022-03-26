@@ -1,0 +1,8 @@
+---
+ - name: add new entry
+   hosts: node-test
+   tasks: 
+         - name: "add entry"
+           copy: 
+                 dest: /etc/motd
+                 content: "welcome to enfec\n"

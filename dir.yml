@@ -1,0 +1,11 @@
+---
+ - name: create directory
+   hosts: node-test
+   tasks: 
+     - name: create directory
+       file: 
+          path: /tmp/TEST
+          state: directory
+          mode: 0777
+          owner: centos
+          group: centos

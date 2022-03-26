@@ -1,0 +1,13 @@
+---
+ - name: to create a file
+   hosts: node-test
+   tasks: 
+      - name: file create
+        file: 
+           path: /tmp/ansible100.txt
+           state: touch
+           mode: 666
+           owner: centos
+           group: centos
+
+

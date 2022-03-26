@@ -1,0 +1,11 @@
+---
+ - name: Install Simple package
+   hosts: node-test
+   become: true
+   vars: 
+     install_pkg: [httpd, vsftpd, ftp]
+   tasks: 
+     - name: Ansible Basic install the pkgs
+       yum: 
+        name: "{{ install_pkg }}"
+        state: latest

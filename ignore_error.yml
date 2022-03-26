@@ -1,0 +1,17 @@
+---
+  - name: testing ignore_errors
+    hosts: node-test
+    tasks:
+         - name: install pkg
+           yum:
+              name: httpd
+              state: latest
+         - name: copy index.html file
+           copy:
+               src: files/index.html
+               dest: /var/www/html/index.html
+           ignore_errors: yes
+         - name: message print
+           debug:
+                msg: "Done all Tasks"
+

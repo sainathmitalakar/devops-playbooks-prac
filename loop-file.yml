@@ -1,0 +1,13 @@
+---
+ - name: Create files using loop
+   hosts: node-test
+   gather_facts: false
+   tasks: 
+       - name: Create a file
+         file: 
+            name: "{{ item }}"
+            state: touch
+         loop: 
+             - /tmp/test1
+             - /tmp/test2
+             - /tmp/test3

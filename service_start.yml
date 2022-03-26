@@ -1,0 +1,17 @@
+---
+ - name: Running the services
+   hosts: node-test
+   vars:
+      web_service: httpd
+      ftp_service: vsftpd
+   tasks: 
+   - name: The {{ web_service }} service is started & enabled
+     service: 
+       name: "{{ web_service }}" 
+       enabled: true
+       state: started
+   - name: The {{ ftp_service }} service is started & enabled
+     service: 
+       name: "{{ ftp_service }}"
+       enabled: true
+       state: started

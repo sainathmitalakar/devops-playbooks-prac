@@ -1,0 +1,14 @@
+---
+ - name: create users
+   hosts: node-test
+   tasks: 
+      - name: create user all machine
+        user: 
+          name: radhika
+          uid: 2020
+          state: present
+          shell: /bin/false
+          group: radhika
+          comment: user for ftp
+          home: /tmp/radhika
+   

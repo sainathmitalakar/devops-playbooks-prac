@@ -1,0 +1,12 @@
+---
+ - name: variable example
+   hosts: node-test
+   vars_files: 
+     - secret.yml
+   tasks: 
+      - name: printing username
+        debug:
+          var: username
+      - name: printing password
+        debug:
+          var: password

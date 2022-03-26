@@ -1,0 +1,17 @@
+---
+ - name: delegate_to example
+   hosts: node-test
+   become: true
+   tasks:
+          - name: get hostname
+            shell: hostname
+          - name: start tuned service
+            service:
+               name: tuned
+               state: restarted
+            delegate_to: 172.31.40.224
+ 
+          - name: message print
+            debug:
+                msg: "Done all Tasks"
+

@@ -1,0 +1,9 @@
+---
+ - name: The condition example
+   hosts: node-test
+   tasks:
+       - name: Install httpd using yum, where value is true
+         yum:
+            name: httpd
+            state: latest
+         when: ansible_distribution_version == "8.4"

@@ -1,0 +1,15 @@
+---
+ - name: This is Tags Example1 (single alias)
+   hosts: node-test
+   gather_facts: no
+   become: true
+   tasks:
+       - name: Create the file
+         file:
+            path: /tmp/test.txt
+            state: touch
+   tags: file_ops 
+   - name: Create the User
+     user:
+         name: kishor
+         state: present

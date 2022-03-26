@@ -1,0 +1,8 @@
+---
+ - name: simple variable 
+   hosts: node-test
+   become: yes
+   tasks: 
+     - name: basic variable example
+       debug: 
+         msg: "This is {{ Hello }}"

@@ -1,0 +1,13 @@
+---
+ - name: create a user using loop
+   hosts: node-test
+   become: true
+   gather_facts: no
+   tasks:
+       - name: create user's
+         user: 
+           name: "{{ item }}"
+         loop: 
+            - testuser1
+            - testuser2
+            - testuser3

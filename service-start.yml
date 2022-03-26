@@ -1,0 +1,13 @@
+---
+ - name: start the services using loop
+   hosts: node-test
+   gather_facts: no
+   tasks:
+     - name: crond & tuned are running
+       service:
+         name: "{{ item }}"
+         state: started
+       loop:
+           - vsftpd
+           - httpd
+           - crond
